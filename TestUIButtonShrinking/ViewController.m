@@ -10,18 +10,17 @@
 
 @interface ViewController ()
 
+@property (nonatomic,assign) BOOL longString;
+
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (IBAction)changeLabel:(UIButton *)sender {
+    NSString *text = self.longString ? @"aaaaaaaaaaaaaaaa": @"bbbbb";
+    [sender setTitle:text forState:UIControlStateNormal];
+    self.longString = !self.longString;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
